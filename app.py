@@ -271,7 +271,7 @@ with tabs[4]:
 
     y_pred = best_model.predict(X_test_scaled)
     r2 = r2_score(y_test, y_pred)
-    rmse = mean_squared_error(y_test, y_pred, squared=False)
+    rmse = np.sqrt(mean_squared_error(y_test, y_pred))
 
     st.metric("R²", f"{r2:.3f}")
     st.metric("RMSE", f"{rmse:.2f} USD")
